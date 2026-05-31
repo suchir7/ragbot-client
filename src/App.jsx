@@ -86,7 +86,7 @@ export default function App() {
                     : styles.botBubble),
                 }}
               >
-                {msg.text}
+                <span dangerouslySetInnerHTML={{ __html: msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
               </div>
             </div>
           ))}
